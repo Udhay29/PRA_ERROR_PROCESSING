@@ -1,0 +1,11 @@
+  <p-accordion [multiple]="true">
+    <p-header class="header-container">
+      <span class="h2 panel-header">Filter By</span>
+      <span class="panel-header panel-header-right body1"><a href="#" (click)="resetFilters($event)">Clear Filters</a></span>
+    </p-header>
+    <p-accordionTab *ngFor="let filter of filters" [header]="filter.name">
+      <filter
+        [filter]="getStateIfActive(filter)"
+        (optionClick)="optionClicked($event)"></filter>
+    </p-accordionTab>
+  </p-accordion>

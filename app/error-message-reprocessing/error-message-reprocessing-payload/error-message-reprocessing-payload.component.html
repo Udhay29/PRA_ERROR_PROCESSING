@@ -1,0 +1,61 @@
+<div class="ui-g">
+  <div class="ui-g-12">
+    <h3 class="ui-g-11 mt-10">{{payloadData?.exceptionType}}</h3>
+    <span class="ui-g-1 text-right">
+      <span class="fontColor" [ngClass]="{'fontActiveColor': isCheckedFlag}"
+        (click)="onClickChecked()">
+        <span class="icon-Circle_Check"></span></span>
+    </span>
+  </div>
+  <div class="ui-g-12">
+    <form [formGroup]="payloadForm">
+      <div class="ui-float-label ui-md-12 ui-lg-12 ui-g-12 textarea-float headerAlign">
+        <textarea [attr.disabled]="isDisabled ? true : null" class="noresize" [rows]="10" pInputTextarea
+          formControlName="header" name="Header"
+          spellcheck="false"
+          [ngClass]="{'error-class': (payloadForm.get('header').touched && (!payloadForm.get('header').value || payloadForm.get('header')['errors']?.required))}"></textarea>
+        <label class="ui-md-12 ui-lg-12 ui-g-12" for="header">Header</label>
+        <div>
+          <p-message severity="error" class="error-message" text="Please enter Header"
+            *ngIf="payloadForm.get('header').touched && (!payloadForm.get('header').value || payloadForm.get('header')['errors']?.required)">
+          </p-message>
+        </div>
+      </div>
+      <div class="ui-float-label ui-md-12 ui-lg-12 ui-g-12 textarea-float payloadAlign">
+        <textarea [attr.disabled]="isDisabled ? true : null" class="noresize" [rows]="15" pInputTextarea
+          formControlName="payload" name="Payload"
+          [ngClass]="{'error-class': payloadForm.get('payload').touched && (!payloadForm.get('payload').value || payloadForm.get('payload')['errors']?.required)}" spellcheck="false"></textarea>
+        <label class="ui-md-12 ui-lg-12 ui-g-12" for="payload">Payload</label>
+        <div>
+          <p-message severity="error" class="error-message" text="Please enter Payload"
+            *ngIf="payloadForm.get('payload').touched && (!payloadForm.get('payload').value || payloadForm.get('payload')['errors']?.required)">
+          </p-message>
+        </div>
+      </div>
+      <div class="ui-float-label ui-md-12 ui-lg-12 ui-g-12 textarea-float payloadAlign">
+        <textarea [attr.disabled]="isDisabled ? true : null" class="noresize" [rows]="4" pInputTextarea
+          [ngClass]="{'error-class': (!payloadForm.get('comment').value && payloadForm.get('comment')['errors']?.required)}" formControlName="comment" name="Comment"
+          spellcheck="false"></textarea>
+        <label class="ui-md-12 ui-lg-12 ui-g-12" for="comment">Comment
+          <span *ngIf=" (!payloadForm.get('comment')['errors']?.required)" class="pull-right mr-20">optional</span>
+        </label>
+        <div>
+          <p-message severity="error" class="error-message" text="Please enter comment"
+            *ngIf="(!payloadForm.get('comment').value && payloadForm.get('comment')['errors']?.required) ">
+          </p-message>
+           <p-message severity="error" text="You have reached the maximum character limit 500"
+          *ngIf="payloadForm.get('comment').touched && 
+          payloadForm.get('comment')['errors']?.maxlength?.actualLength > payloadForm.get('comment')['errors']?.maxlength?.requiredLength">
+        </p-message>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="ui-g-12 payloadAlign">
+    <div class="ui-g-12 modal-footer">
+      <button pButton class="ui-button-secondary mr-4" (click)="onClickCancel()">Cancel</button>
+      <button pButton class="ui-button-secondary mr-4" (click)="onClickDelete()">Delete</button>
+      <button pButton class="ui-button-primary mr-4" (click)="onClickReprocess()">Reprocess</button>
+    </div>
+  </div>
+</div>

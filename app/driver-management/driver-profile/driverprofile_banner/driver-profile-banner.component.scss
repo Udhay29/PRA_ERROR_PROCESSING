@@ -1,0 +1,58 @@
+@import "~ngx-prime-theme/theme/colors";
+@import "~ngx-prime-theme/theme/typography";
+@import "~ngx-prime-theme/theme/mixins";
+@import "~ngx-prime-theme/theme/breakpoints";
+
+.title-container {
+  @include getTypographyStyles("h1");
+  text-align: left;
+  color: $grey-dark66;
+  display: flex;
+}
+
+.profile-sub-details-container {
+  line-height: 0.4;
+}
+.ml-4 {
+  margin: 0 13px;
+}
+.mb-5 {
+  margin-bottom: 1.5rem;
+}
+
+.label-group {
+  display: flex;
+}
+.labelName {
+  @include getTypographyStyles("body1");
+  color: $grey-dark27;
+}
+.labelValue {
+  @include getTypographyStyles("body1");
+  color: $black;
+}
+
+.profile-img-title-container {
+  display: flex;
+}
+.profile-img {
+  display: flex;
+  width: 58px;
+  border-radius: 50%;
+  float: left;
+  height: 58px;
+}
+.driver-name {
+  @include getTypographyStyles("TAB-CURRENT");
+  display: flex;
+  line-height: 1.5;
+  text-align: left;
+  font-weight: bold;
+  color: $grey-dark66;
+}
+
+.profile-sub-details-container {
+  .ui-g-5 {
+    padding: 0.5rem;
+  }
+}

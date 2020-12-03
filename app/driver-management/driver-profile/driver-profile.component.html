@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="ui-g-12">
+    <div class="p-col-12 p-md-12 p-lg-12 p-xl-12">
+      <admin-profile-banner-overview
+              [userId]="userId"
+              [operDataInfo]="operDataInfo"
+              [personnelInfo]="personnelInfo"
+              [personDetails]="personDetails"></admin-profile-banner-overview>
+    </div>
+  </div>
+  <div class="ui-g-12 p-col-12 row driver-profile">
+    <div class="p-col-3  overview-max-width">
+      <div class="ml-2 ">
+        <div>
+          <admin-driver-overview
+                  [userId]="userId"
+                  [personnelInfo]="personnelInfo"
+                  [operDataInfo]="operDataInfo"
+                  [states]="states"></admin-driver-overview>
+        </div>
+      </div>
+    </div>
+
+    <div class="panelbar-container p-col-9 pl-0">
+      <div class="margin-left">
+        <p-tabView (onChange)="onTabChange($event)">
+          <p-tabPanel header="CERTIFICATIONS">
+            <admin-certifications [userId]="userId"
+                                  [personDetails]="personDetails"
+                                  (showFilter)="onShowFilter($event)"></admin-certifications>
+          </p-tabPanel>
+          <p-tabPanel header="ENDORSEMENTS">
+            <admin-endorsements
+                    [userId]="userId"
+                    [operDataInfo]="operDataInfo"
+                    [personDetails]="personDetails"
+                    (showFilter)="onShowFilter($event)"></admin-endorsements>
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+    </div>
+  </div>
+</div>

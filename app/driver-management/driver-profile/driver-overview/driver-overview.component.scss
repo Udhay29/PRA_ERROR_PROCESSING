@@ -1,0 +1,98 @@
+@import "~ngx-prime-theme/theme/colors";
+@import "~ngx-prime-theme/theme/typography";
+@import "~ngx-prime-theme/theme/mixins";
+@import "~ngx-prime-theme/theme/breakpoints";
+
+.heading {
+  display: flex;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  @include spacer("padding", "0 1");
+  @include spacer("margin", "0 3 0 0");
+  color: $grey-dark27;
+}
+.info {
+  display: flex;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  @include spacer("padding", "0 1");
+  color: $grey-dark66;
+}
+
+.fl {
+  float: left;
+}
+.d-inline {
+  display: inline;
+}
+.panel-container {
+
+  .ui-panel {
+    flex-basis: 100%;
+    overflow-scrolling: auto;
+  }
+}
+
+.Driver-Overview {
+  @include getTypographyStyles("title");
+  text-align: left;
+  color: $grey-dark66;
+}
+
+.mgr-user-image {
+  float: inside; //center
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 5px 0 0;
+}
+.mgr-user-name {
+  float: inside;
+  margin-top: 4px;
+}
+
+.icon-Chevron_Next {
+  font-size: large;
+  font-weight: bolder;
+  color: $primary-blue;
+}
+
+.icon-orange{
+  color: $orange;
+  padding-left: 5px;
+}
+
+.icon-red{
+  color: $red;
+  padding-left: 5px;
+}
+
+.footer {
+  color: $grey-dark66;
+  font-weight: bolder;
+}
+.py-5 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.px-3 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mr-2 {
+  margin-right: 0.25rem;
+}
+.pl-0 {
+  padding-left: 0;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}

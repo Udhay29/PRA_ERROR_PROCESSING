@@ -1,0 +1,111 @@
+<div class="container">
+  <h1>Notification Details</h1>
+  <div *ngIf="loading" class="loading-overlay">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <div class="container-div">
+    <p-panel header="Notification Type" class="ui-g-12">
+      <div class="ui-g-6 type">
+        <span class="field-label">Notification Category</span>
+        {{ this.notification?.category }}
+      </div>
+      <div class="ui-g-6 type">
+        <span class="field-label">Notification Subcategory</span>
+        {{ this.notification?.subcategory }}
+      </div>
+      <div class="ui-g-12 type">
+        <span class="field-label">Types </span>
+        <ul>
+          <li *ngFor="let type of this.notification?.types">
+            {{ type }}
+          </li>
+        </ul>
+      </div>
+    </p-panel>
+    <p-panel header="Notification Criteria" class="ui-g-12">
+      <div *ngFor="let criterion of this.criteria" class="ui-g-6">
+        <span class="field-label">{{ criterion.title }}</span>
+        {{ criterion.value }}
+      </div>
+    </p-panel>
+    <p-panel header="Subscribed Contacts" class="ui-g-12">
+      <p-table
+        class="allow-overflow-table"
+        [value]="this.notification?.subscribers"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="contact-type-column">Contact Type</th>
+            <th>Contact Name</th>
+            <th class="single-option-column">In App</th>
+            <th class="single-option-column">Email</th>
+            <th class="single-option-column">Mobile</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-subscriber let-i="rowIndex">
+          <tr>
+            <td>
+              {{ subscriber.person.type }}
+            </td>
+            <td>
+              <span class="full-width">
+                {{ subscriber.person.preferredName }}
+                {{ subscriber.person.lastName }}
+                ({{ subscriber.person.emailAddress }})
+              </span>
+            </td>
+            <td class="single-option-column">
+              <i
+                *ngIf="isInApp(subscriber.deliveryMethods); else elseBlock"
+                class="icon-Check"
+              ></i>
+            </td>
+            <td class="single-option-column">
+              <i
+                *ngIf="isEmail(subscriber.deliveryMethods); else elseBlock"
+                class="icon-Check"
+              ></i>
+            </td>
+            <td class="single-option-column">
+              <i
+                *ngIf="isMobile(subscriber.deliveryMethods); else elseBlock"
+                class="icon-Check"
+              ></i>
+            </td>
+            <ng-template #elseBlock>
+              &ndash; &ndash;
+            </ng-template>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="6" class="empty-table-cell">
+              There's no one subscribed to this notification.<br />
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-panel>
+    <div class="bottom-button-row">
+      <p-button
+        *ngIf="this.notification?.status === 'Active'"
+        label="Inactivate"
+        styleClass="ui-button-secondary"
+        class="pull-right large-padding-right"
+        (onClick)="onInactivateClick()"
+      ></p-button>
+      <p-button
+        *ngIf="this.notification?.status === 'Inactive'"
+        label="Activate"
+        class="pull-right"
+        styleClass="ui-button-secondary large-padding-right"
+        (onClick)="onActivateClick()"
+      ></p-button>
+      <p-button
+        label="Edit"
+        (onClick)="onEditClick()"
+        class="large-padding-right pull-right"
+      ></p-button>
+    </div>
+  </div>
+</div>

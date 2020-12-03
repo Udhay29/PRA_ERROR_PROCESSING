@@ -1,0 +1,61 @@
+<div class="p-grid driver-profile-container mb-1 ml-2">
+  <div id="title" class="p-justify-left title-container mb-5 mt-3">
+    <label>Driver Profile</label>
+  </div>
+</div>
+<div class="p-grid">
+  <div class="profile-img-title-container ui-g-4 mb-5" *ngIf="personnelInfo">
+    <div class="profile-img ml-2" *ngIf="driverProfilePicture$ | async as profilePicture">
+      <ngx-avatar [src]="profilePicture" alt="User Image" [textSizeRatio]="2.5" bgColor="#007DBA"
+        name="{{ _personnelInfo?.firstName }} {{ _personnelInfo?.lastName }}">
+        <img class="profile-img " alt="User Image" [src]="profilePicture" />
+      </ngx-avatar>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-10">
+        <div class="driver-name p-1">
+          {{ _personnelInfo?.firstName }}
+          {{ _personnelInfo?.lastName }}
+          ({{ _personnelInfo?.userId }})
+        </div>
+        <div class="ui-g-10">
+          <div class="p-1 labelName">
+            {{ status | status }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="profile-sub-details-container ui-g-6">
+    <div class="ui-g-12">
+      <div class="ui-g-5">
+        <div class="label-group">
+          <div class="labelName">Business Unit</div>
+          <div class="labelValue ml-4">{{ _personDetails?.busUnit }}</div>
+        </div>
+      </div>
+      <div class="ui-g-5">
+        <!--work type-->
+        <div class="label-group">
+          <div class="labelName">Work Type</div>
+          <div class="labelValue ml-4">{{ _personDetails?.fullTimePartTime | workType }}</div>
+        </div>
+      </div>
+      <div class="ui-g-12">
+        <div class="ui-g-5">
+          <!--driver Type-->
+          <div class="label-group">
+            <div class="labelName">Driver Type</div>
+            <div class="labelValue ml-4">{{ _personDetails?.jobGroup | driverType }}</div>
+          </div>
+        </div>
+        <div class="ui-g-5">
+          <div class="label-group">
+            <div class="labelName">Seat</div>
+            <div class="labelValue ml-4" *ngIf="operData">{{ operData.operData.seatNumber | driverSeat }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

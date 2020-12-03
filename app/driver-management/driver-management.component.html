@@ -1,0 +1,24 @@
+<div class="container dm-container">
+  <h1>DRIVER MANAGEMENT</h1>
+  <shared-data-panel
+    *ngIf="!fullscreen"
+    panel-title="Drivers"
+    [values]="values"
+    [columns]="columns"
+    [total-records]="totalRecords"
+    [rows-per-page]="tableSize"
+    [first-row]="firstRecord"
+    [search-state]="mostRecentSearch"
+    [filters]="filters"
+    [filter-state]="activeFilters"
+    [manage-columns]="true"
+    [overflow-menu]="overflowMenu"
+    [columns-model]="drivermodel"
+    [right-panel-helper]="rightPanelHelper"
+    (onRowSelect)="onRowSelect($event)"
+    (onColumnSelect)="onColumnSelect($event)"
+    (onPageChange)="onPageChange($event)"
+    (onSearch)="onSearch($event)"
+    (onFilter)="onFilter($event)">
+  </shared-data-panel>
+</div>

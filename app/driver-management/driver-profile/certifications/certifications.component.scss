@@ -1,0 +1,19 @@
+@import 'node_modules/ngx-prime-theme/theme/dropshadow';
+@import 'node_modules/ngx-prime-theme/theme/colors';
+
+shared-data-panel {
+  min-height: 491px;
+  box-shadow: none;
+  border-radius: 10px;
+  display: flex;
+}
+.filter-icon {
+  padding-top: 7px;
+  padding-right: 5px;
+  margin-left: 15px;
+  color: $blue-dark25;
+  cursor: pointer;
+}
+.width-100 {
+  width: 100px;
+}

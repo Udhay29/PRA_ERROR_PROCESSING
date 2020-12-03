@@ -1,0 +1,51 @@
+<p-dialog header="Manage Columns"
+          [(visible)]="displayColumns"
+          modal="modal"
+          width="530"
+          [responsive]="true"
+          (onHide)="cancel()">
+  <p-orderList [value]="manageColumnsList"
+               [listStyle]="{ height: '340px', width: '100%' }"
+               [style]="{ width: '100%' }"
+               [responsive]="true"
+               filter="filter"
+               filterBy="header"
+               filterPlaceholder="Search"
+               dragdrop="true"
+               dragdropScope="manageColumns">
+    <ng-template let-column
+                 pTemplate="item">
+      <div class="ui-helper-clearfix ui-g">
+        <span class="ui-g-11">
+          <p [ngClass]="{
+              columnName: !column.visible,
+              columnNameSelected: column.visible
+            }">
+            <strong>{{ column.header }}</strong>
+          </p>
+        </span>
+        <span class="ui-g-1 manage-column"
+              >
+          <a [ngClass]="{
+              'icon-Circle_Add_Solid': !column.visible,
+              'icon-Circle_Remove_Solid': column.visible
+            }"
+             (click)="onVisibleToggle(column)">
+          </a>
+        </span>
+      </div>
+    </ng-template>
+  </p-orderList>
+  <p-footer>
+    <button pButton
+            type="button"
+            class="ui-button-secondary"
+            (click)="cancel()"
+            label="Cancel"></button>
+    <button pButton
+            type="button"
+            class="buttonPadding"
+            label="Save"
+            (click)="onSave()"></button>
+  </p-footer>
+</p-dialog>

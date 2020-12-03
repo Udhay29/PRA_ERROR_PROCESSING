@@ -1,0 +1,54 @@
+@import "~ngx-prime-theme/theme/colors";
+@import "~ngx-prime-theme/theme/typography";
+@import "~ngx-prime-theme/theme/mixins";
+@import "~ngx-prime-theme/theme/breakpoints";
+
+.fontColor {
+  color: $grey-dark27;
+}
+
+.fontActiveColor {
+  color: $blue !important;
+}
+.payloadTitle > h3 {
+    font-size: 16px;
+    padding: 0 15px;
+    letter-spacing: normal;
+}
+.noresize {
+    resize: none;
+    width: 100%;
+  }
+  .modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid $grey-lite48;
+    text-align: right;
+  }
+  .error-class, .error-class:hover, .error-class:focus {
+        border-color: $red;
+        background-color: $red-lite90;
+  }
+  .mr-4 {
+    margin-right: 1rem;
+}
+.headerAlign {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.payloadAlign {
+  margin-top: 13px;
+  > div {
+    height: 17px;
+  }
+}
+.headerAlign > div{
+  height: 17px;
+}
+.mt-10 {
+  margin-top: 0.625rem;
+}
+
+.mr-20 {
+  margin-right: 1.25rem;
+}

@@ -1,0 +1,290 @@
+<div class="container">
+  <h1>Create Notification</h1>
+  <div *ngIf="loading" class="loading-overlay">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <form class="form-div" [formGroup]="formNotification">
+    <p-panel header="Notification Type" class="ui-g-12">
+      <div class="panel-instructions h6">
+        Select the Notification type for your Subscription
+      </div>
+      <div class="ui-g-6 large-padding-right">
+        <admin-typeahead
+          field="description"
+          formControlName="category"
+          label="Notification Category"
+          [isInvalid]="isTouchedAndInvalid('category')"
+          [suggestions]="categorySuggestions"
+          (completeMethod)="suggestCategories($event)"
+          (onSelect)="categorySelected()"
+        >
+        </admin-typeahead>
+        <p-message
+          severity="error"
+          text="Please select a Notification Category"
+          *ngIf="isTouchedAndInvalid('category')"
+        ></p-message>
+      </div>
+      <div class="ui-g-6">
+        <admin-typeahead
+          field="description"
+          formControlName="subcategory"
+          label="Notification Subcategory"
+          [isInvalid]="isTouchedAndInvalid('subcategory')"
+          [suggestions]="subcategorySuggestions"
+          (completeMethod)="suggestSubcategories($event)"
+          (onSelect)="subcategorySelected()"
+        >
+        </admin-typeahead>
+        <p-message
+          severity="error"
+          text="Please select a Notification Subcategory"
+          *ngIf="isTouchedAndInvalid('subcategory')"
+        ></p-message>
+      </div>
+
+      <div class="ui-g-12 second-row">
+        <span class="ui-float-label full-width">
+          <p-autoComplete
+            appendTo="body"
+            formControlName="types"
+            [multiple]="true"
+            [suggestions]="typeSuggestions"
+            (completeMethod)="suggestTypes($event)"
+            (onSelect)="typeSelected($event)"
+            (onUnselect)="resetCriteriaValidators($event)"
+            [dropdown]="true"
+            [forceSelection]="true"
+            [inputStyle]="{ width: '100%' }"
+            [style]="{ width: '100%' }"
+          >
+            <ng-template let-type pTemplate="item">
+              <div class="ui-helper-clearfix type">
+                {{ type?.name }}
+                <span *ngIf="type?.internalOnly" class="type-internal-external pull-right">
+                  Internal
+                </span>
+              </div>
+            </ng-template>
+            <ng-template let-type pTemplate="selectedItem">
+              <div class="ui-helper-clearfix">
+                <span [ngClass]="{'chip-padding': !type?.internalOnly}">{{ type?.name }}</span>
+                <span *ngIf="type?.internalOnly" class="pull-right internal-chip">
+                  - Internal
+                </span>
+              </div>
+            </ng-template>
+          </p-autoComplete>
+          <label>Notification Type</label>
+        </span>
+        <p-message
+          severity="error"
+          text="Please select at least one Notification Type"
+          *ngIf="isTouchedAndInvalid('types')"
+        ></p-message>
+      </div>
+    </p-panel>
+    <p-panel formGroupName="criteria" header="Notification Criteria">
+      <div class="panel-instructions h6">
+        {{
+          criteria
+            ? 'Select the Notification Criteria for your Subscription'
+            : 'This Notification Type has no Notification Criteria'
+        }}
+      </div>
+      <p-accordion #accordion>
+        <ng-container
+          *ngFor="let criterionKey of getKeys(getControls(formCriteria))"
+        >
+          <p-accordionTab
+            [formGroupName]="criterionKey"
+            [header]="criterionKey | titlecase"
+          >
+            <div class="criteria-block">
+              <ng-container
+                *ngFor="
+                  let innerKey of getKeys(
+                    getControls(formCriteria.get(criterionKey))
+                  );
+                  index as i
+                "
+              >
+                <admin-typeahead
+                  *ngIf="isATypeahead(innerKey) && isMultiValue(innerKey)"
+                  [formControlName]="innerKey"
+                  [label]="innerKey"
+                  [multiple]="isMultiValue(innerKey)"
+                  [suggestions]="suggestions[innerKey]"
+                  field="label"
+                  (completeMethod)="suggestCriteriaValues($event, innerKey)"
+                  (onDropdownClick)="suggestCriteriaValues($event, innerKey)"
+                  class="ui-g-6 large-padding-right second-row"
+                  [dropdown]="isADropdown(innerKey)"
+                >
+                </admin-typeahead>
+                <admin-typeahead
+                  *ngIf="isATypeahead(innerKey) && !isMultiValue(innerKey)"
+                  [formControlName]="innerKey"
+                  [label]="innerKey"
+                  [multiple]="isMultiValue(innerKey)"
+                  [suggestions]="suggestions[innerKey]"
+                  (completeMethod)="suggestCriteriaValues($event, innerKey)"
+                  (onDropdownClick)="suggestCriteriaValues($event, innerKey)"
+                  class="ui-g-6 large-padding-right second-row"
+                  [dropdown]="isADropdown(innerKey)"
+                >
+                </admin-typeahead>
+                <span
+                  *ngIf="!isATypeahead(innerKey)"
+                  class="ui-g-6 large-padding-right second-row"
+                >
+                  <span class="ui-float-label full-width">
+                    <input
+                      [formControlName]="innerKey"
+                      type="text"
+                      name="{{ innerKey }}"
+                      class="full-width large-padding-right"
+                      pInputText
+                    />
+                    <label for="{{ innerKey }}">{{ innerKey }}</label>
+                  </span>
+                  <span>
+                    <p-message
+                      *ngFor="
+                        let errorKey of getErrorsArray(innerKey, criterionKey)
+                      "
+                      severity="error"
+                      text="{{ innerKey | errorMessage: errorKey }}"
+                    >
+                    </p-message>
+                  </span>
+                </span>
+              </ng-container>
+            </div>
+          </p-accordionTab>
+        </ng-container>
+      </p-accordion>
+    </p-panel>
+    <p-panel header="Subscribed Contacts">
+      <div class="panel-instructions h6">
+        <span>Select Contacts to Subscribe</span>
+        <span *ngIf="someSelectedTypesAreInternalOnly()"
+          ><br /><br />
+          External contact type is not available since one of selected
+          notification type is an internal only notification
+        </span>
+      </div>
+      <p-table
+        class="allow-overflow-table"
+        formArrayName="contacts"
+        [value]="formContacts.controls"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="contact-type-column">Contact Type</th>
+            <th>Contact Name</th>
+            <th class="single-option-column">In App</th>
+            <th class="single-option-column">Email</th>
+            <th class="single-option-column">Mobile</th>
+            <th class="last-column"></th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-i="rowIndex">
+          <tr [formGroupName]="i">
+            <td class="allow-overflow-cell">
+              <admin-typeahead
+                formControlName="contactType"
+                placeholder="Contact Type"
+                [suggestions]="contactDropdownOptions"
+                [readonly]="true"
+                (onSelect)="contactTypeChange($event, i)"
+              >
+              </admin-typeahead>
+            </td>
+            <td>
+              <span class="full-width">
+                <p-autoComplete
+                  appendTo="body"
+                  placeholder="Contact"
+                  field="fullName"
+                  formControlName="contact"
+                  [inputStyle]="{ width: '100%' }"
+                  [style]="{ width: '100%' }"
+                  [suggestions]="contactSuggestions[i]"
+                  (completeMethod)="suggestContacts($event, i)"
+                >
+                  <ng-template let-person pTemplate="item">
+                    <div class="ui-helper-clearfix">
+                      <span style="font-weight: bold; font-size: .75em"
+                        >{{ person.preferredName || person.firstName }}
+                        {{ person.lastName }}</span
+                      >
+                      <span style="float: right; font-weight: bold">{{
+                        person.phoneNumber
+                      }}</span
+                      ><br />
+                      <span>{{ person.emailAddress }}</span
+                      ><span style="float: right">{{ person.jobTitle }}</span>
+                    </div>
+                  </ng-template>
+                </p-autoComplete>
+              </span>
+            </td>
+            <td class="single-option-column">
+              <p-checkbox
+                [binary]="true"
+                [formControl]="formContacts.get([i, 'inApp'])"
+              ></p-checkbox>
+            </td>
+            <td class="single-option-column">
+              <p-checkbox
+                [binary]="true"
+                [formControl]="formContacts.get([i, 'email'])"
+              ></p-checkbox>
+            </td>
+            <td class="single-option-column">
+              <p-checkbox
+                [binary]="true"
+                [formControl]="formContacts.get([i, 'mobile'])"
+              ></p-checkbox>
+            </td>
+            <td class="last-column">
+              <i
+                (click)="formContacts.removeAt(i)"
+                class="icon-Circle_Remove_Solid minus-icon selectable"
+                aria-hidden="true"
+              >
+              </i>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td [attr.colspan]="6" class="empty-table-cell">
+              There's no one subscribed to this notification.<br />
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <p-button
+        (onClick)="newContact()"
+        label="Add Someone"
+        class="second-row"
+        styleClass="ui-button-secondary"
+      ></p-button>
+    </p-panel>
+    <div class="bottom-button-row">
+      <p-button
+        label="Save"
+        (click)="saveForm()"
+        class="large-padding-right pull-right"
+      ></p-button>
+      <p-button
+        label="Cancel"
+        (click)="onCancel()"
+        styleClass="ui-button-secondary"
+        class="large-padding-right pull-right"
+      ></p-button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Task Management</h1>
+  <shared-data-panel
+    panel-title="Task Assignments"
+    [columns]="columns"
+    [values]="taskList"
+    [filters]="filters"
+    [filter-state]="activeFilters"
+    [right-panel-helper]="rightPanelHelper"
+    [total-records]="totalRecords"
+    [rows-per-page]="tableSize"
+    [panel-buttons]="buttons"
+    [checkbox-config]="checkboxConfig"
+    [overflow-menu]="overflowMenu"
+    (onPageChange)="onPageChange($event)"
+    (onSearch)="onSearch($event)"
+    (onFilter)="onFilter($event)"
+    (onRowSelect)="onRowSelect($event)"
+    (onColumnSelect)="onColumnSelect($event)"
+  >
+    <data-panel-right>
+      <ng-container [ngSwitch]="mode">
+        <taskmanagement-detail
+          *ngSwitchDefault
+          [task-id]='selectedTaskId'
+          (add)="mode='addEdit-task'"
+          (close)="close($event)"
+          (updated)="taskUpdated()"
+        ></taskmanagement-detail>
+        <taskmanagement-addEdit-task
+          #addEditTask
+          *ngSwitchCase="'addEdit-task'"
+          [task-id]='selectedTaskId'
+          (close)="close($event)"
+          (updated)="taskUpdated()"
+        ></taskmanagement-addEdit-task>
+      </ng-container>
+    </data-panel-right>
+  </shared-data-panel>
+</div>

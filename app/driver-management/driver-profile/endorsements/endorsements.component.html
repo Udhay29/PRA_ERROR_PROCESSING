@@ -1,0 +1,21 @@
+<div>
+  <shared-data-panel
+    class="table-container"
+    panel-title="Endorsements"
+    [values]="endorsement"
+    [columns]="defaultColumns"
+    [total-records]="endorsement"
+    [rows-per-page]="tableSize"
+    [first-row]="firstRecord"
+    [search-state]="mostRecentSearch"
+    [filters]="filters"
+    [filter-state]="activeFilters"
+    [manage-columns]="true"
+    [is-filterable]="false"
+    [overflow-menu]="overflowMenu"
+    [columns-model]="drivermodel"
+    (onPageChange)="onPageChange($event)"
+    [right-panel-helper]="rightPanelHelper"
+    (onSearch)="onSearch($event)">
+  </shared-data-panel>
+</div>

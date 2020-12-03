@@ -1,0 +1,9 @@
+.invalid ::ng-deep span input{
+  border-color: #cc2d24 !important;
+  background-color: #faeae9;
+}
+
+.multi-invalid ::ng-deep span ul{
+  border-color: #cc2d24 !important;
+  background-color: #faeae9;
+}

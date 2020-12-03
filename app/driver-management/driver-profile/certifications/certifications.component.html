@@ -1,0 +1,22 @@
+<div>
+    <shared-data-panel
+            class="top-table"
+            panel-title="Certifications"
+            [values]="certificates"
+            [columns]="defaultColumns"
+            [total-records]="certificates"
+            [rows-per-page]="tableSize"
+            [first-row]="firstRecord"
+            [search-state]="mostRecentSearch"
+            [filters]="filters"
+            [filter-state]="activeFilters"
+            [manage-columns]="false"
+            [is-filterable]="false"
+            [overflow-menu]="overflowMenu"
+            [columns-model]="drivermodel"
+            (onPageChange)="onPageChange($event)"
+            [right-panel-helper]="rightPanelHelper"
+            (onSearch)="onSearch($event)"
+    >
+    </shared-data-panel>
+</div>

@@ -1,0 +1,45 @@
+p-panel {
+
+    ::ng-deep .ui-panel {
+        .ui-panel-content-wrapper .ui-panel-content {
+            padding: 0;
+        }
+    }
+}
+
+p-accordiontab {
+    ::ng-deep .ui-accordion-header {
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        background-color: inherit;
+
+        a {
+            .ui-accordion-toggle-icon {
+                color: black;
+            }
+
+            .ui-accordion-header-text {
+                color: black;
+            }
+        }
+    }
+}
+
+.panel-header-right {
+    float: right;
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.panel-header {
+    line-height: 2rem;
+}
+
+.header-container {
+    display: flex;
+    height: inherit;
+    overflow: hidden;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}

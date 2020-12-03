@@ -1,0 +1,274 @@
+@import "~ngx-prime-theme/theme/dropshadow";
+@import "~ngx-prime-theme/theme/colors";
+@import "~ngx-prime-theme/theme/typography";
+
+.slider-reset {
+  cursor: pointer;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.d-inline {
+  display: inline;
+}
+
+#container {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.table {
+  display: block;
+  overflow-x: scroll;
+}
+
+.right-p-panel {
+  height: 200%;
+}
+
+:host ::ng-deep p-panel.right-p-panel > div.ui-panel {
+  border-radius: 2px;
+  background: white;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+  height: 100% !important;
+}
+
+.footer {
+  height: auto;
+  display: inline-block;
+}
+
+p-paginator {
+  height: 160px;
+}
+
+.ui-table-wrapper {
+  overflow: auto;
+  table {
+    table-layout: auto;
+  }
+}
+
+th {
+  border-style: solid;
+  @include spacer("margin", "1 1 0 0");
+  border-color: $black-opacity5;
+}
+td {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.message-wrapper {
+  height: calc(100vh - 650px);
+  @include getTypographyStyles("h2");
+  color: $grey-dark27;
+}
+.display-middle {
+  position: relative;
+  text-align: center;
+  display: block;
+  top: 45%;
+}
+
+.heading {
+  font-size: 12px;
+  line-height: 12px;
+  text-align: left;
+  color: $grey-dark27;
+}
+
+.data {
+  font-size: 12px;
+  line-height: 12px;
+  text-align: left;
+  color: $grey-dark66;
+  padding-left: 5px;
+}
+
+.icon-User_Profile_Solid {
+  color: $primary-blue;
+}
+
+.icon-Menu_Close :hover {
+  color: $primary-blue;
+}
+
+.right-header-link {
+  line-height: 60px;
+}
+
+.container {
+  flex-direction: column;
+}
+
+.panel-button {
+  margin-left: 20px;
+  cursor: pointer;
+  color: $primary-blue;
+}
+
+.user-image {
+  float: left;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px 10px 0;
+}
+.avatar /deep/ .avatar-content {
+  background-color: $primary-blue !important;
+}
+.app-user {
+  background-size: cover;
+}
+
+.mgr-user-image {
+  float: inside; //center
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 0 10px 0 10px;
+}
+
+.align-image {
+  display: inline-flex;
+  align-items: center;
+}
+
+.employee-name {
+  font-size: 16px;
+  line-height: 16px;
+  text-align: left;
+  color: $grey-dark66;
+}
+
+.employee-title {
+  font-size: 12px;
+  line-height: 16px;
+  text-align: left;
+  color: $grey-dark27;
+}
+
+.right-header-link {
+  line-height: 60px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-button {
+  margin-left: 20px;
+  cursor: pointer;
+  color: $primary-blue;
+}
+
+.user-image {
+  float: left;
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  margin: 0 10px 10px 0;
+}
+
+.employee-name {
+  font-weight: 650;
+  color: $grey-dark66;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.employee-title {
+  font-weight: 650;
+  color: $grey-dark27;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.contact-icons {
+  font-size: 17px;
+  color: $primary-blue;
+  margin-top: 15px;
+  text-decoration: none;
+  a {
+    margin-right: 6px;
+    margin-bottom: -2px;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.field-label {
+  color: $grey-dark27;
+  margin-right: 5px;
+}
+
+.manager-block {
+  padding-bottom: 10px;
+}
+
+.right-inner-panel {
+  padding-top: 10px;
+}
+
+data-panel-right p-panel ::ng-deep .ui-panel {
+  position: relative;
+}
+
+.loading-overlay {
+  border-radius: 6px;
+}
+
+p-footer {
+  p-button {
+    margin-left: 10px;
+  }
+}
+
+shared-data-panel {
+  display: flex;
+  flex: auto;
+  min-height: 0;
+}
+
+// driver management
+::ng-deep .dm-container {
+  .data-panel-right {
+    padding-left: 1em !important;
+  }
+  .ui-panel-content {
+    min-height: 71.5vh !important;
+  }
+  .dm-filter-container {
+    max-width: 263px;
+    .ui-panel-titlebar-icon {
+      color: $blue-dark25;
+      font-size: 1rem;
+    }
+  }
+  .Driver-Details {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    color: $grey-dark66;
+  }
+  .dm-panel-custom-width {
+    min-width: 150px;
+  }
+  .panel-container-custom-height {
+    min-height: 80vh;
+    max-height: 80vh;
+    .child-panel {
+      .ui-panel-content-wrapper {
+        .ui-panel-content {
+          max-height: 200px;
+          min-height: 200px;
+        }
+      }
+    }
+  }
+}

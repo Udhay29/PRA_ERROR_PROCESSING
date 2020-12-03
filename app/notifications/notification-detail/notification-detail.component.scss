@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+p-panel {
+  margin-bottom: 1em;
+}
+
+.container-div {
+  display: flex;
+  flex-direction: column;
+  flex: auto 1 0;
+  min-height: 0;
+}
+
+.type {
+  margin-bottom: 1em;
+}
+
+.field-label {
+  color: #939393;
+  margin-right: 5px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  display: inline-grid;
+  padding: 0;
+}
+
+.criteria-block {
+  display: flex;
+  padding: 0.3em;
+  flex-wrap: wrap;
+}
+
+.contact-type-column {
+  width: 20%;
+}
+
+.single-option-column {
+  width: 10%;
+  text-align: center;
+}
+
+.allow-overflow-cell {
+  overflow: visible;
+}
+
+.allow-overflow-table ::ng-deep .ui-table .ui-table-wrapper table{
+  overflow: visible;
+}

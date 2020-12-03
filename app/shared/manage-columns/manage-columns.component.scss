@@ -1,0 +1,49 @@
+@import "~ngx-prime-theme/theme/colors";
+@import "~ngx-prime-theme/theme/typography";
+@import "~ngx-prime-theme/theme/mixins";
+@import "~ngx-prime-theme/theme/breakpoints";
+
+.iconStyle {
+  color: $black-opacity40;
+  text-decoration: none;
+}
+.manage-column{
+  padding-left:17px;
+}
+
+.iconStyle:hover {
+  color: $blue;
+}
+
+.iconStyle:active {
+  color: $blue-dark50;
+}
+
+.marginButton {
+  margin-right: 10px;
+}
+a {
+  float: right;
+  text-align: center;
+}
+
+.divFloat {
+  float: right;
+}
+
+.columnName {
+  @include getTypographyStyles('body2');
+  color: $black-opacity30;
+}
+
+.columnNameSelected {
+  @include getTypographyStyles('body2');
+  color: $black-opacity40;
+}
+
+.buttonPadding {
+  margin-left: 12px;
+}
+::ng-deep .ui-confirmdialog {
+  z-index: 8000 !important;
+}

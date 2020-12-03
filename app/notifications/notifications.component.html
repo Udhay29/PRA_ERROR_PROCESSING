@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Notification Management</h1>
+  <shared-data-panel
+    panel-title="Notifications"
+    [values]="values"
+    [filters]="filters"
+    [filter-state]="activeFilters"
+    [columns]="columns"
+    [total-records]="count"
+    [rows-per-page]="tableSize"
+    [first-row]="firstRecord"
+    [right-panel-helper]="rightPanelHelper"
+    [panel-buttons]="buttons"
+    (onPageChange)="onPageChange($event)"
+    (onRowSelect)="rowSelected($event)"
+    (onSearch)="onSearch($event)"
+    (onFilter)="onFilter($event)">
+  </shared-data-panel>
+</div>

@@ -1,0 +1,42 @@
+.right-header-link {
+    line-height: 60px;
+}
+
+.panel-button {
+    margin-left: 20px;
+    cursor: pointer;
+    color: #007DBA;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-block {
+    padding-bottom: 10px;
+}
+
+.right-inner-panel {
+    padding-top: 10px;
+}
+
+.loading-overlay {
+    border-radius: 6px;
+}
+
+p-footer {
+    p-button {
+        margin-left: 10px;
+    }
+}
+
+shared-data-panel {
+  display: flex;
+  flex: auto;
+  min-height: 0;
+}
+
+taskmanagement-detail, taskmanagement-addEdit-task {
+  display: flex;
+}

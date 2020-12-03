@@ -1,0 +1,93 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+p-panel {
+  margin-bottom: 1em;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  flex: auto 1 0;
+  min-height: 0;
+}
+
+.second-row {
+  padding-top: 2em;
+}
+
+.panel-instructions {
+  margin-bottom: 20px;
+}
+
+.empty-table-cell {
+  text-align: center;
+  padding: 1em 0;
+
+  p-button {
+    margin-top: 1em;
+  }
+}
+
+.criteria-block {
+  display: flex;
+  padding: 0.3em;
+  flex-wrap: wrap;
+}
+
+.contact-type-column {
+  width: 20%;
+}
+
+.single-option-column {
+  width: 10%;
+  text-align: center;
+}
+
+.last-column {
+  width: 5%;
+  text-align: center;
+}
+
+.allow-overflow-cell {
+  overflow: visible;
+}
+
+.allow-overflow-table ::ng-deep .ui-table .ui-table-wrapper table{
+  overflow: visible;
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.minus-icon {
+  color: red;
+}
+
+.type-internal-external {
+  pointer-events: none;
+  display: inline-block;
+  background-color: #ddd;
+  color: #333;
+  padding: 2px 15px;
+  border-radius: 10px;
+}
+
+.type {
+  font-family: "Helvetica Neue LT Pro 55 ROMAN", Helvetica, Arial, Sans-Serif !important;
+  font-size: 0.625rem !important;
+  line-height: 0.875rem !important;
+  letter-spacing: 0rem !important;
+  text-transform: none !important;
+}
+
+.internal-chip {
+  padding: 0em 1em 0em .5em;
+}
+
+.chip-padding {
+  padding-right: 1em
+}

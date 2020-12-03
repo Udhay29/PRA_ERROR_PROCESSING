@@ -1,0 +1,53 @@
+<div class="container dm-container">
+  <h1>ERROR REPROCESSING</h1>
+  <shared-data-panel #sharedPanel
+    panel-title=""
+    [values]="errorsToProcess"
+    [columns]="errorProcessingColumns"
+    [total-records]="totalRecords"
+    [rows-per-page]="tableSize"
+    [first-row]="firstRecord"
+    [search-state]="mostRecentSearch"
+    [filters]="filters"
+    [filter-state]="activeFilters"
+    [manage-columns]="true"
+    [right-panel-helper]="rightPanelHelper"
+    [panel-buttons]="buttons"
+    (onRowSelect)="onRowSelect($event)"
+    (onPageChange)="onPageChange($event)"
+    (onFilter)="onFilter($event)"
+    [checkbox-config]="checkboxConfig"
+    [hideSearch] = "true"
+    [isGridLoading] = "isGridLoading"
+    class="error-reprocess">
+  </shared-data-panel>
+</div>
+
+<p-dialog
+  [(visible)]="isReprocessingFlag"
+  [header]="errMessage"
+  [dismissableMask]="true"
+  [modal]="true" [responsive]="true" [width]="425" [minWidth]="200" [minY]="70" [baseZIndex]="10000" (onHide)="closeIconClicked()">
+<div>
+    <form [formGroup]="reprocessForm" novalidate>
+      <div>
+        <div class="ui-float-label textAreaWrapper">
+          <textarea formControlName="comment" class="textArea noresize" rows="5" cols="51" pInputTextarea name="comment"
+            [ngClass]="{'error-class': !reprocessForm.get('comment').value && reprocessForm.get('comment').touched }"></textarea>
+          <label class="textAreaValue" for="comment">Comments</label>
+        </div>
+        <div>
+          <p-message severity="error" text="Please enter comments"
+            *ngIf="reprocessForm.get('comment').touched && (!reprocessForm.get('comment').value || reprocessForm.get('comment')['errors']?.required)">
+          </p-message>
+        </div>
+      </div>
+    </form>
+</div>
+<p-footer>
+    <button type="text" pButton label="Cancel" (click)="onClickCancel()" class="ui-button-tertiary"
+      *ngIf="isReprocessingFlag"></button>
+    <button type="text" pButton label="Save" (click)="onSave()" class="ui-button-primary"
+      *ngIf="isReprocessingFlag"></button>
+</p-footer>
+</p-dialog>

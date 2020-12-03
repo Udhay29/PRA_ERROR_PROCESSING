@@ -1,0 +1,109 @@
+<ng-container [ngSwitch]="filter.type">
+  <div class="filter-container" *ngSwitchCase="'CHECKBOX'">
+    <ng-container
+      *ngIf="filter.options.length > 5 || filter.showSearchOverride"
+    >
+      <p-autoComplete
+        [(ngModel)]="filter.searchText"
+        [suggestions]="filter.suggestions"
+        (completeMethod)="filter.search($event)"
+        [dropdown]="true"
+        (onSelect)="filter.searchSelected($event, onFilterChange)"
+        styleClass="filter-autocomplete"
+      >
+      </p-autoComplete>
+    </ng-container>
+    <div class="checkbox-container">
+      <ng-container *ngIf="0 < filter.options.length < 10">
+        <ng-container *ngFor="let option of filter.options">
+          <p-checkbox
+            [name]="filter.field"
+            [value]="option.value"
+            [label]="option.label"
+            [(ngModel)]="filter.model"
+            (click)="optionClick.emit(filter)"
+          ></p-checkbox>
+        </ng-container>
+      </ng-container>
+      <ng-container
+        *ngIf="filter.options.length >= 10 || filter.options.length == 0"
+      >
+        <ng-container *ngFor="let option of filter.selectedSearches">
+          <p-checkbox
+            [name]="filter.field"
+            [value]="option"
+            [label]="option"
+            [(ngModel)]="filter.model"
+            (click)="optionClick.emit(filter)"
+          ></p-checkbox>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <div class="filter-container" *ngSwitchCase="'ELASTIC'">
+    <p-autoComplete
+      #searchBox
+      [(ngModel)]="filter.searchText"
+      [suggestions]="suggestions"
+      (completeMethod)="filter.search($event)"
+      [dropdown]="true"
+      dropdownMode="current"
+      (onSelect)="filter.searchSelected($event, optionClick, searchBox)"
+      styleClass="filter-autocomplete"
+    >
+      <ng-template let-brand pTemplate="item">
+        <div *ngIf="filter.field === 'personDTO.status'">
+          <span *ngIf="brand == 'A'">{{ filterStatus.A }}</span>
+          <span *ngIf="brand == 'L'">{{ filterStatus.L }}</span>
+        </div>
+        <div *ngIf="filter.field !== 'personDTO.status'">
+          {{ brand }}
+        </div>
+      </ng-template>
+    </p-autoComplete>
+    <div class="checkbox-container">
+      <ng-container *ngFor="let option of filter.selectedSearches">
+        <p-checkbox
+          *ngIf="filter.field === 'personDTO.status'"
+          [name]="filter.field"
+          [value]="option"
+          [label]="option == 'A' ? 'Active' : 'Leave'"
+          [(ngModel)]="filter.model"
+          (click)="optionClick.emit(filter)"
+        >
+        </p-checkbox>
+        <p-checkbox
+          *ngIf="filter.field !== 'personDTO.status'"
+          [name]="filter.field"
+          [value]="option"
+          [label]="option"
+          [(ngModel)]="filter.model"
+          (click)="onOptionClick()"
+        ></p-checkbox>
+      </ng-container>
+    </div>
+  </div>
+  <div *ngSwitchCase="'DATERANGE'">
+    <div class="date-Filter">
+      <span>From</span>
+      <div>
+        <p-calendar appendTo="body" class="effective-date" showIcon="true" dateFormat="mm/dd/yy"
+         placeholder="Pick a Date"  [(ngModel)]="filter.fromDate" (onClose)="filter.onSelect(optionClick)"
+         (onSelect)="filter.onSelect(optionClick)"
+         ></p-calendar>
+         <p-message *ngIf="filter.inValidDate" severity="error" text="Enter valid Date"></p-message>
+        </div>
+
+      <div class="pad-top10">
+        <span>To</span>
+        <div>
+          <p-calendar appendTo="body" class="andContainer" showIcon="true" calendarIcon="icon-Chevron_Down"
+            dateFormat="mm/dd/yy"
+             placeholder="Pick a Date" [(ngModel)]="filter.toDate" (onBlur)="filter.onSelect(optionClick)"
+             (onSelect)="filter.onSelect(optionClick)"></p-calendar>
+          <p-message *ngIf="filter.inValidDate" severity="error" text="Enter valid Date"></p-message>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

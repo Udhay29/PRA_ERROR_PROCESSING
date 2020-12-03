@@ -1,0 +1,46 @@
+.right-header-link {
+    line-height: 60px;
+}
+
+.panel-button {
+    margin-left: 20px;
+    cursor: pointer;
+    color: #007DBA;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-block {
+    padding-bottom: 10px;
+}
+
+.right-inner-panel {
+    padding-top: 10px;
+}
+
+data-panel-right p-panel ::ng-deep .ui-panel{
+    position: relative;
+}
+
+.loading-overlay {
+    border-radius: 6px;
+}
+
+p-footer {
+    p-button {
+        margin-left: 10px;
+    }
+}
+
+shared-data-panel {
+  display: flex;
+  flex: 1 0;
+  min-height: 0;
+}
+
+router-outlet {
+  display: flex;
+}

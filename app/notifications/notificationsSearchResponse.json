@@ -1,0 +1,950 @@
+{
+  "took": 65,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 271,
+    "max_score": 1,
+    "hits": [
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "3004",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 3004,
+          "subscriptionDomain": "OrdMgmnt",
+          "notificationSubscriptionCategory": "Unified Customer Request",
+          "notificationSubscriptionSubCategory": "Unified Customer Request",
+          "notificationSubscriptionTypes": [
+            "Unified Customer Request Duplicate Tender",
+            "Unified Customer Request Out of Sequence",
+            "Unified Customer Request Resubmit",
+            "Unified Customer Request Cancel",
+            "Unified Customer Request Change",
+            "Unified Customer Request Original"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Trading Partner",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "AMAZONICS",
+                  "details": {
+                    "Trading Partner": "AMAZONICS(AMAZONICS)"
+                  }
+                }
+              ]
+            },
+            {
+              "userNotificationSubscriptionParameterCode": "Bill To",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "966",
+                  "details": {
+                    "zipCode": "625265638",
+                    "country": "USA",
+                    "addressLineTwo": "",
+                    "code": "ADMDEC    ",
+                    "city": "Decatur",
+                    "name": "Archer Daniels Midland INC ADMDEC",
+                    "addressLineOne": "3601 E Division St",
+                    "id": "966",
+                    "state": "IL",
+                    "roleType": "Bill To"
+                  }
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "JCNT102",
+                "firstName": "Yohalakshmi",
+                "preferredName": "Yohalakshmi",
+                "lastName": "Jayashankar",
+                "emailAddress": "yohalakshmi.jayashankar@jbhunt.com",
+                "phoneNumber": null,
+                "jobTitle": "E&T Contract Worker",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-08-18T04:48:34",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "JCNT109",
+            "firstName": "Meenakshi",
+            "preferredName": "Meenakshi",
+            "lastName": "Krishnamoorthy",
+            "emailAddress": "meenakshi.krishnamoorthy@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "RCON517",
+            "firstName": "Nandini",
+            "preferredName": "Nandini",
+            "lastName": "Dutta",
+            "emailAddress": "duttasiva.nandini@cognizant.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-08-18T04:48:34",
+          "lastUpdatedTimestamp": "2018-08-28T01:42:04",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "2992",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 2992,
+          "subscriptionDomain": "OrdMgmnt",
+          "notificationSubscriptionCategory": "Unified Customer Request",
+          "notificationSubscriptionSubCategory": "Unified Customer Request",
+          "notificationSubscriptionTypes": [
+            "Unified Customer Request Change"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Line of Business",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "15",
+                  "details": {
+                    "zipCode": "981044425",
+                    "country": "USA",
+                    "addressLineTwo": "Attn: Trans Finance",
+                    "code": "AISE16",
+                    "city": "Seattle",
+                    "name": "Amazon AISE16",
+                    "addressLineOne": "705 5Th Ave S",
+                    "id": "34434",
+                    "state": "WA",
+                    "roleType": "Bill To"
+                  }
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "JCNT103",
+                "firstName": "Shravya",
+                "preferredName": "Shravya",
+                "lastName": "Vinodh",
+                "emailAddress": "shravya.vinodh@jbhunt.com",
+                "phoneNumber": null,
+                "jobTitle": "E&T Contract Worker",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-08-13T04:36:50",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "JCNT109",
+            "firstName": "Meenakshi",
+            "preferredName": "Meenakshi",
+            "lastName": "Krishnamoorthy",
+            "emailAddress": "meenakshi.krishnamoorthy@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "JCNT109",
+            "firstName": "Meenakshi",
+            "preferredName": "Meenakshi",
+            "lastName": "Krishnamoorthy",
+            "emailAddress": "meenakshi.krishnamoorthy@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-08-13T04:36:50",
+          "lastUpdatedTimestamp": "2018-08-13T04:36:50",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "3007",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 3007,
+          "subscriptionDomain": "OrdMgmnt",
+          "notificationSubscriptionCategory": "Order Level",
+          "notificationSubscriptionSubCategory": "Order",
+          "notificationSubscriptionTypes": [
+            "Appointment Reset Any User",
+            "Appointment Reset Non-Order Creator"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Line of Business",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "15",
+                  "details": {
+                    "zipCode": "981044425",
+                    "country": "USA",
+                    "addressLineTwo": "Attn: Trans Finance",
+                    "code": "AISE16    ",
+                    "city": "Seattle",
+                    "name": "Amazon AISE16",
+                    "addressLineOne": "705 5th Ave S",
+                    "id": "34434",
+                    "state": "WA",
+                    "roleType": "Bill To"
+                  }
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "RCON388",
+                "firstName": "Balaji",
+                "preferredName": "Balaji",
+                "lastName": "Thiruvellarai Srinivasan",
+                "emailAddress": "balaji.t.s@cognizant.com",
+                "phoneNumber": null,
+                "jobTitle": "E&T Contract Worker",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-08-27T04:10:51",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "JCNT259",
+            "firstName": "Shelton",
+            "preferredName": "Shelton",
+            "lastName": "Jebadurai",
+            "emailAddress": "Shelton.Jebadurai@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "JCNT259",
+            "firstName": "Shelton",
+            "preferredName": "Shelton",
+            "lastName": "Jebadurai",
+            "emailAddress": "Shelton.Jebadurai@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-08-27T04:10:51",
+          "lastUpdatedTimestamp": "2018-08-27T04:10:51",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "3019",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 3019,
+          "subscriptionDomain": "PartLocMDM",
+          "notificationSubscriptionCategory": "Account",
+          "notificationSubscriptionSubCategory": "Commitment",
+          "notificationSubscriptionTypes": [
+            "Commitment Updated",
+            "Commitment Created"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Line of Business",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "15",
+                  "details": {
+                    "zipCode": "981044425",
+                    "country": "USA",
+                    "addressLineTwo": "Attn: Trans Finance",
+                    "code": "AISE16    ",
+                    "city": "Seattle",
+                    "name": "Amazon AISE16",
+                    "addressLineOne": "705 5th Ave S",
+                    "id": "34434",
+                    "state": "WA",
+                    "roleType": "Bill To"
+                  }
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "RCON517",
+                "firstName": "Nandini",
+                "preferredName": "Nandini",
+                "lastName": "Dutta",
+                "emailAddress": "duttasiva.nandini@cognizant.com",
+                "phoneNumber": null,
+                "jobTitle": "E&T Contract Worker",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-08-31T05:43:57",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "RCON517",
+            "firstName": "Nandini",
+            "preferredName": "Nandini",
+            "lastName": "Dutta",
+            "emailAddress": "duttasiva.nandini@cognizant.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "RCON517",
+            "firstName": "Nandini",
+            "preferredName": "Nandini",
+            "lastName": "Dutta",
+            "emailAddress": "duttasiva.nandini@cognizant.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-08-31T05:43:57",
+          "lastUpdatedTimestamp": "2018-08-31T05:43:57",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "2964",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 2964,
+          "subscriptionDomain": "PartLocMDM",
+          "notificationSubscriptionCategory": "Account",
+          "notificationSubscriptionSubCategory": "Commitment",
+          "notificationSubscriptionTypes": [
+            "Commitment Review"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Weeks From Latest Active Effective Date",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "1",
+                  "details": {
+                    "Weeks From Latest Active Effective Date": "1"
+                  }
+                }
+              ]
+            },
+            {
+              "userNotificationSubscriptionParameterCode": "Associated User",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "100299",
+                  "details": {
+                    "Associated User": "null null"
+                  }
+                }
+              ]
+            },
+            {
+              "userNotificationSubscriptionParameterCode": "Days Till Expiration",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "1",
+                  "details": {
+                    "Days Till Expiration": "1"
+                  }
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "JCNT071",
+                "firstName": "Ramya",
+                "preferredName": "Ramya",
+                "lastName": "Kolinjivadi Vijayakumar",
+                "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+                "phoneNumber": null,
+                "jobTitle": "CWR Contract Programmer",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-07-16T04:23:51",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "JCNT071",
+            "firstName": "Ramya",
+            "preferredName": "Ramya",
+            "lastName": "Kolinjivadi Vijayakumar",
+            "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "JCNT071",
+            "firstName": "Ramya",
+            "preferredName": "Ramya",
+            "lastName": "Kolinjivadi Vijayakumar",
+            "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-07-16T04:23:52",
+          "lastUpdatedTimestamp": "2018-07-16T04:23:52",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "3011",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 3011,
+          "subscriptionDomain": "OrdMgmnt",
+          "notificationSubscriptionCategory": "Order Level",
+          "notificationSubscriptionSubCategory": "Order",
+          "notificationSubscriptionTypes": [
+            "Arrival At Pickup Stop",
+            "Order Picked Up",
+            "Arrival At Delivery Stop",
+            "Any Delivery On Order Delayed",
+            "Any Pickup On Order May be Delayed",
+            "Any Delivery On Order May be Delay",
+            "Any Stop On Order May be Delayed",
+            "Any Stop On Order Delayed",
+            "Any Pickup On Order Delayed"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Business Unit",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "ICS",
+                  "details": {
+                    "Business Unit": "ICS"
+                  }
+                }
+              ]
+            },
+            {
+              "userNotificationSubscriptionParameterCode": "Service Offering",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "LTL",
+                  "details": {
+                    "Service Offering": "LTL"
+                  }
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "RCON517",
+                "firstName": "Nandini",
+                "preferredName": "Nandini",
+                "lastName": "Dutta",
+                "emailAddress": "duttasiva.nandini@cognizant.com",
+                "phoneNumber": null,
+                "jobTitle": "E&T Contract Worker",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-08-28T01:44:46",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "RCON517",
+            "firstName": "Nandini",
+            "preferredName": "Nandini",
+            "lastName": "Dutta",
+            "emailAddress": "duttasiva.nandini@cognizant.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "RCON517",
+            "firstName": "Nandini",
+            "preferredName": "Nandini",
+            "lastName": "Dutta",
+            "emailAddress": "duttasiva.nandini@cognizant.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-08-28T01:44:46",
+          "lastUpdatedTimestamp": "2018-08-28T01:44:46",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "3014",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 3014,
+          "subscriptionDomain": "OrdMgmnt",
+          "notificationSubscriptionCategory": "Order Level",
+          "notificationSubscriptionSubCategory": "Pending Order",
+          "notificationSubscriptionTypes": [
+            "Order Accepted",
+            "Order Rejected",
+            "Order Canceled"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Business Unit",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "ICS",
+                  "details": {
+                    "Business Unit": "ICS"
+                  }
+                }
+              ]
+            },
+            {
+              "userNotificationSubscriptionParameterCode": "Service Offering",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "LTL",
+                  "details": {
+                    "Service Offering": "LTL"
+                  }
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "RCON363",
+                "firstName": "Sandeep",
+                "preferredName": "Sandeep",
+                "lastName": "Rajamanickam",
+                "emailAddress": "Sandeep.Rajamanickam@cognizant.com",
+                "phoneNumber": null,
+                "jobTitle": "E&T Contract Worker",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            },
+            {
+              "subscribedPerson": {
+                "id": "RCON517",
+                "firstName": "Nandini",
+                "preferredName": "Nandini",
+                "lastName": "Dutta",
+                "emailAddress": "duttasiva.nandini@cognizant.com",
+                "phoneNumber": null,
+                "jobTitle": "E&T Contract Worker",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-08-28T05:07:46",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "RCON363",
+            "firstName": "Sandeep",
+            "preferredName": "Sandeep",
+            "lastName": "Rajamanickam",
+            "emailAddress": "Sandeep.Rajamanickam@cognizant.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "RCON363",
+            "firstName": "Sandeep",
+            "preferredName": "Sandeep",
+            "lastName": "Rajamanickam",
+            "emailAddress": "Sandeep.Rajamanickam@cognizant.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-08-28T05:07:46",
+          "lastUpdatedTimestamp": "2018-08-28T05:07:46",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "2967",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 2967,
+          "subscriptionDomain": "OrdMgmnt",
+          "notificationSubscriptionCategory": "Order Level",
+          "notificationSubscriptionSubCategory": "Order",
+          "notificationSubscriptionTypes": [
+            "Order Deramped At Destination"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Order Owner",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "249643",
+                  "details": null
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "JCNT071",
+                "firstName": "Ramya",
+                "preferredName": "Ramya",
+                "lastName": "Kolinjivadi Vijayakumar",
+                "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+                "phoneNumber": null,
+                "jobTitle": "CWR Contract Programmer",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-07-16T05:21:12",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "JCNT071",
+            "firstName": "Ramya",
+            "preferredName": "Ramya",
+            "lastName": "Kolinjivadi Vijayakumar",
+            "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "JCNT071",
+            "firstName": "Ramya",
+            "preferredName": "Ramya",
+            "lastName": "Kolinjivadi Vijayakumar",
+            "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-07-16T05:21:12",
+          "lastUpdatedTimestamp": "2018-07-16T05:21:12",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "2971",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 2971,
+          "subscriptionDomain": "OrdMgmnt",
+          "notificationSubscriptionCategory": "Order Level",
+          "notificationSubscriptionSubCategory": "Order",
+          "notificationSubscriptionTypes": [
+            "Order Delivered"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Order Owner",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "100299",
+                  "details": null
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "JCNT071",
+                "firstName": "Ramya",
+                "preferredName": "Ramya",
+                "lastName": "Kolinjivadi Vijayakumar",
+                "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+                "phoneNumber": null,
+                "jobTitle": "CWR Contract Programmer",
+                "contactType": "CWR",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-07-16T06:57:51",
+          "expirationTimestamp": "2099-12-31T00:00:00",
+          "createdBy": {
+            "id": "JCNT071",
+            "firstName": "Ramya",
+            "preferredName": "Ramya",
+            "lastName": "Kolinjivadi Vijayakumar",
+            "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "JCNT071",
+            "firstName": "Ramya",
+            "preferredName": "Ramya",
+            "lastName": "Kolinjivadi Vijayakumar",
+            "emailAddress": "ramya.kolinjivadi.vijayakumar@jbhunt.com",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-07-16T06:57:51",
+          "lastUpdatedTimestamp": "2018-07-16T06:57:51",
+          "status": "Active"
+        }
+      },
+      {
+        "_index": "infrastructure-admin-usernotification",
+        "_type": "doc",
+        "_id": "3044",
+        "_score": 1,
+        "_source": {
+          "subscriptionID": 3044,
+          "subscriptionDomain": "OrdMgmnt",
+          "notificationSubscriptionCategory": "Order Level",
+          "notificationSubscriptionSubCategory": "Pending Order",
+          "notificationSubscriptionTypes": [
+            "Order Accepted"
+          ],
+          "userNotificationSubscriptionCriterias": [
+            {
+              "userNotificationSubscriptionParameterCode": "Business Unit",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "JBT",
+                  "details": {
+                    "Business Unit": "JBT"
+                  }
+                }
+              ]
+            },
+            {
+              "userNotificationSubscriptionParameterCode": "Service Offering",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "OTR",
+                  "details": {
+                    "Service Offering": "OTR"
+                  }
+                }
+              ]
+            },
+            {
+              "userNotificationSubscriptionParameterCode": "Origin Capacity Area",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "Texas, Dallas Usa (Da)",
+                  "details": {
+                    "Origin Capacity Area": "Texas, Dallas Usa (Da)"
+                  }
+                }
+              ]
+            },
+            {
+              "userNotificationSubscriptionParameterCode": "Bill To",
+              "userNotificationSubscriptionParameterValues": [
+                {
+                  "id": "15822",
+                  "details": {
+                    "zipCode": "532083132",
+                    "country": "USA",
+                    "addressLineTwo": "",
+                    "code": "MBMI",
+                    "city": "Milwaukee",
+                    "name": "Millercoors LLC MBMI",
+                    "addressLineOne": "4000 W State St",
+                    "id": "15822",
+                    "state": "WI",
+                    "roleType": "Bill To"
+                  }
+                }
+              ]
+            }
+          ],
+          "userNotificationSubscriptionDetails": [
+            {
+              "subscribedPerson": {
+                "id": "JENG379",
+                "firstName": "KEVIN",
+                "preferredName": "Scott",
+                "lastName": "HERRINGTON",
+                "emailAddress": "SCOTT.HERRINGTON@JBHUNT.COM",
+                "phoneNumber": "4798207245",
+                "jobTitle": "Business Analyst - Sr",
+                "contactType": "EMP",
+                "companyName": null,
+                "type": "Internal"
+              },
+              "notificationSubscriptionDeliveryMethodCodes": [
+                "In-App",
+                "Email"
+              ]
+            }
+          ],
+          "effectiveTimestamp": "2018-09-28T14:01:33",
+          "expirationTimestamp": "2018-09-28T15:29:42",
+          "createdBy": {
+            "id": "JENG379",
+            "firstName": "KEVIN",
+            "preferredName": "Scott",
+            "lastName": "HERRINGTON",
+            "emailAddress": "SCOTT.HERRINGTON@JBHUNT.COM",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "lastUpdatedBy": {
+            "id": "JENG379",
+            "firstName": "KEVIN",
+            "preferredName": "Scott",
+            "lastName": "HERRINGTON",
+            "emailAddress": "SCOTT.HERRINGTON@JBHUNT.COM",
+            "phoneNumber": null,
+            "jobTitle": null,
+            "contactType": null,
+            "companyName": null,
+            "type": null
+          },
+          "createdTimestamp": "2018-09-28T14:01:33",
+          "lastUpdatedTimestamp": "2018-09-28T15:29:42",
+          "status": "Inactive"
+        }
+      }
+    ]
+  }
+}

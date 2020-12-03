@@ -1,0 +1,13 @@
+<div class="ui-g-12 detail-content">
+  <h3 *ngIf="data?.exceptionType;else template">{{data?.exceptionType}}</h3>
+  <ng-template #template><p>not found</p></ng-template>
+  <p>Exception Details</p>
+  <div class = "ui-g-12 modal-content">
+    <p *ngIf="data?.errorMessage;else template">{{data?.errorMessage}}</p>
+  </div>
+  <div class = "ui-g-12 modal-footer">
+      <button type="text" pButton label="Cancel" (click)="onClickHome()" class="ui-button-secondary mr-4"></button>
+      <button type="text" pButton label="Delete" (click)="onClickDelete()" class="ui-button-secondary mr-4"></button>
+      <button type="text" pButton label="Next" (click)="onClickNext()" class="ui-button-primary mr-4"></button>
+  </div>
+</div>

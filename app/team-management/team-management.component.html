@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 *ngIf="!hideLeftPanel">TEAM MANAGEMENT</h1>
+  <h1 *ngIf="hideLeftPanel">TEAM PROFILE</h1>
+  <shared-data-panel
+    #dataPanelRefresh
+    *ngIf="!hideLeftPanel"
+    panel-title="Teams"
+    [columns]="columns"
+    [values]="teamList"
+    [filters]="filters"
+    [filter-state]="activeFilters"
+    [right-panel-helper]="rightPanelHelper"
+    [total-records]="totalRecords"
+    [rows-per-page]="tableSize"
+    [panel-buttons]="buttons"
+    [checkbox-config]="checkboxConfig"
+    [overflow-menu]="overflowMenu"
+    (onPageChange)="onPageChange($event)"
+    (onSearch)="onSearch($event)"
+    (onFilter)="onFilter($event)"
+    (onRowSelect)="onRowSelect($event)"
+    (onColumnSelect)="onColumnSelect($event)"
+  >
+    <data-panel-right>
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </data-panel-right>
+  </shared-data-panel>
+  <div *ngIf="hideLeftPanel">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+  </div>
+</div>

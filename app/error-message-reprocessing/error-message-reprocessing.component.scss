@@ -1,0 +1,60 @@
+@import '~ngx-prime-theme/theme/_colors.scss';
+
+.error-reprocess {
+  ::ng-deep .ui-table-scrollable-wrapper {
+  max-height: calc(100vh - 16.5em);
+  }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-message {
+  top: auto !important;
+  bottom: -30px;
+}
+
+.has-error {
+  border-color: red !important;
+}
+
+.textAreaWrapper {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.textAreaValue {
+  position: absolute;
+  top: 8px !important;
+  left: 10px;
+}
+
+.textAreaValue ::ng-deep .ui-float-label textarea.ui-state-filled~label:not(.char-limit),
+.ui-float-label textarea:focus~label:not(.char-limit),
+.ui-float-label textarea.ui-state-filled~label:not(.char-limit),
+.ui-float-label textarea:-webkit-autofill~label:not(.char-limit) {
+  top: -0.75em !important;
+}
+
+.textArea {
+  padding-left: 10px;
+  resize: none;
+}
+
+textarea.ui-state-filled~label,
+.ui-float-label textarea:not(:focus):not(:-webkit-autofill)~label:not(.char-limit) {
+    top: -0.75em !important;
+    left: 10px;
+    font-size: 12px;
+}
+
+.ui-float-label textarea:not(:focus):not(.ui-state-filled):not(:-webkit-autofill) ~ label:not(.char-limit) {
+  margin-top: 1.25em;
+}
+
+.error-class, .error-class:hover, .error-class:focus {
+  border: 1px solid $red !important;
+  background-color: $red-lite90 !important;
+}
